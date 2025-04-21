@@ -62,7 +62,7 @@ resource "aws_security_group_rule" "kvsDgIntegratorLoadBalancer" {
   from_port                = 80
   to_port                  = 80
   protocol                 = "tcp"
-  source_security_group_id = aws_security_group.kvsDgIntegratorLoadBalancer.id
+  source_security_group_id = aws_security_group.kvsDgTrigger.id
   security_group_id        = aws_security_group.kvsDgIntegratorLoadBalancer.id
   description              = "Allow HTTP from source security group"
 }
