@@ -25,5 +25,5 @@ connect = {
 deepgram = {
   deepgram_api = "wss://api.deepgram.com/v1/listen"
   deepgram_api_key = "67ca1db57274e784fa1414d0edbe01de6cebfd0f"
-  kvs_dg_integrator_log_level = "Debug"
+  kvs_dg_integrator_log_level = "debug"
 }
