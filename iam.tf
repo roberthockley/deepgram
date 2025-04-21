@@ -1,5 +1,5 @@
 resource "aws_iam_role" "kvs_dg_integrator_execution_role" {
-  name = "kvsDgIntegratorExecutionRole2"
+  name = "kvsDgIntegratorExecutionRole"
   assume_role_policy = jsonencode({
     Version = "2012-10-17"
     Statement = [
@@ -43,7 +43,7 @@ resource "aws_iam_role_policy_attachment" "kvs_dg_integrator_cloudwatch" {
 }
 
 resource "aws_iam_role" "kvs_dg_integrator_task_role" {
-  name = "kvsDgIntegratorTaskRole2"
+  name = "kvsDgIntegratorTaskRole"
   assume_role_policy = jsonencode({
     Version = "2012-10-17"
     Statement = [

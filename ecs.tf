@@ -1,5 +1,5 @@
 resource "aws_ecs_cluster" "kvs_dg_integrator_cluster" {
-  name = "kvs-dg-integrator-cluster2"
+  name = "kvs-dg-integrator-cluster"
   setting {
     name  = "containerInsights"
     value = "disabled"
