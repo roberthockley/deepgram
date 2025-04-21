@@ -1,5 +1,5 @@
-resource "aws_cloudwatch_log_group" "lambda_outbound" {
-  name              = "/aws/lambda/${aws_lambda_function.lambda_makeCampaign.function_name}"
+resource "aws_cloudwatch_log_group" "kvs_dg_trigger" {
+  name              = "/aws/lambda/${aws_lambda_function.kvs_dg_trigger.function_name}"
   retention_in_days = 7
 }
 
