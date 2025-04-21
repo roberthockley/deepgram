@@ -45,7 +45,7 @@ resource "aws_ecs_task_definition" "kvs_dg_integrator" {
 
 resource "aws_ecs_service" "kvs_dg_integrator_ecs_service" {
   name            = "kvsDgIntegratorEcsService"
-  cluster         = var.kvs_dg_integrator_cluster.id
+  cluster         = aws_ecs_cluster.kvs_dg_integrator_cluster.id
   task_definition = aws_ecs_task_definition.kvs_dg_integrator.arn
   desired_count   = "1"
   launch_type     = "FARGATE"
