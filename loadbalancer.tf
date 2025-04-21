@@ -3,7 +3,7 @@ resource "aws_lb" "kvs_dg_integrator_lb" {
   internal           = true
   load_balancer_type = "application"
   subnets            = [aws_subnet.deepgram_a.id,aws_subnet.deepgram_b.id]
-  security_groups    = [aws_security_group.kvs_dg_integrator_lb_sg.id]
+  security_groups    = [aws_security_group.kvsDgIntegratorLoadBalancer.id]
 }
 
 resource "aws_lb_target_group" "kvs_dg_integrator_tg" {
