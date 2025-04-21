@@ -60,7 +60,7 @@ resource "aws_iam_role" "kvs_dg_integrator_task_role" {
 
 resource "aws_iam_role_policy_attachment" "kvs_dg_integrator_task_kvs" {
   depends_on = []
-  role       = aws_iam_role.kvs_dg_integrator_execution_role.name
+  role       = aws_iam_role.kvs_dg_integrator_task_role.name
   policy_arn = "arn:aws:iam::aws:policy/AmazonKinesisVideoStreamsReadOnlyAccess"
 }
 
