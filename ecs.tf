@@ -32,6 +32,16 @@ resource "aws_ecs_task_definition" "kvs_dg_integrator" {
       environmentFiles = []
       command = []
       environmentFiles = []
+      secrets = []
+      dnsServers = []
+      dnsSearchDomains = []
+      extraHosts = []
+      dockerSecurityOptions = []
+      dockerLabels = {}
+      ulimits = []
+      secretOptions = []
+      systemControls = []
+      credentialSpecs = []
       environment = [
         { name = "DEEPGRAM_API", value = var.deepgram.deepgram_api },
         { name = "DEEPGRAM_API_KEY", value = var.deepgram.deepgram_api_key },
