@@ -12,7 +12,7 @@ resource "aws_lambda_function" "kvs_dg_trigger" {
 
   environment {
     variables = {
-      #KVS_DG_INTEGRATOR_DOMAIN = aws_lb.kvs_dg_integrator_lb.dns_name
+      KVS_DG_INTEGRATOR_DOMAIN = aws_lb.kvs_dg_integrator_lb.dns_name
       LOG_LEVEL                = "debug"
     }
   }
