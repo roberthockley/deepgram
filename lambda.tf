@@ -12,13 +12,13 @@ resource "aws_lambda_function" "kvs_dg_trigger" {
 
   environment {
     variables = {
-      KVS_DG_INTEGRATOR_DOMAIN = aws_lb.kvs_dg_integrator_lb.dns_name
+      #KVS_DG_INTEGRATOR_DOMAIN = aws_lb.kvs_dg_integrator_lb.dns_name
       LOG_LEVEL                = "debug"
     }
   }
 
-  vpc_config {
-    security_group_ids = [aws_security_group.kvsDgTrigger.id]
-    subnet_ids        = [aws_subnet.deepgram_a.id,aws_subnet.deepgram_b.id]
-  }
+  #vpc_config {
+  #  security_group_ids = [aws_security_group.kvsDgTrigger.id]
+   # subnet_ids        = [aws_subnet.deepgram_a.id,aws_subnet.deepgram_b.id]
+  #}
 }
