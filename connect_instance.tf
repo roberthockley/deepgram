@@ -107,10 +107,10 @@ resource "aws_connect_instance_storage_config" "kvs" {
   }
 }
 
-resource "aws_connect_contact_flow" "wait" {
-  instance_id  = aws_connect_instance.song.id
-  name         = "Sample Deepgram flow"
-  description  = "Sample Deepgram flow"
-  type         = "CONTACT_FLOW"
-  filename     = "sample_flow.json"
-} 
+#resource "aws_connect_contact_flow" "wait" {
+#  instance_id  = aws_connect_instance.song.id
+#  name         = "Sample Deepgram flow"
+#  description  = "Sample Deepgram flow"
+#  type         = "CONTACT_FLOW"
+#  filename     = "sample_flow.json"
+#} 
