@@ -113,4 +113,4 @@ resource "aws_connect_contact_flow" "wait" {
   description  = "Ensure callback enabled"
   type         = "CONTACT_FLOW"
   filename     = "sample_flow.json"
-}
+} 
