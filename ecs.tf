@@ -42,3 +42,26 @@ resource "aws_ecs_task_definition" "kvs_dg_integrator" {
     }
   ])
 }
+
+resource "aws_ecs_service" "kvs_dg_integrator_ecs_service" {
+  name            = "kvsDgIntegratorEcsService"
+  cluster         = var.kvs_dg_integrator_cluster.id
+  task_definition = aws_ecs_task_definition.kvs_dg_integrator.arn
+  desired_count   = "1"
+  launch_type     = "FARGATE"
+
+  network_configuration {
+    subnets          = [aws_subnet.deepgram_a.id,aws_subnet.deepgram_b.id]
+    security_groups  = [aws_security_group.kvsDgIntegratorEcs.id]
+    assign_public_ip = true  # Change to false for private subnets with NAT
+  }
+
+  load_balancer {
+    target_group_arn = aws_lb_target_group.kvs_dg_integrator_tg.arn
+    container_name   = "kvs-dg-integrator-container"
+    container_port   = 80
+  }
+
+  # Dependency enforcement
+  depends_on = [aws_lb_listener.kvs_dg_integrator_load_balancer_listener]
+}
