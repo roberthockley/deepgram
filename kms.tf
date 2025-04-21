@@ -1,3 +1,3 @@
 data "aws_kms_key" "kvs" {
-  key_id = "aws/kinesisvideo"
+  key_id = "alias/aws/kinesisvideo"
 }
