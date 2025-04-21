@@ -105,7 +105,7 @@ resource "aws_connect_instance_storage_config" "kvs" {
     }
     storage_type = "KINESIS_VIDEO_STREAM"
   }
-}
+} 
 
 #resource "aws_connect_contact_flow" "wait" {
 #  instance_id  = aws_connect_instance.song.id
