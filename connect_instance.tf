@@ -107,10 +107,17 @@ resource "aws_connect_instance_storage_config" "kvs" {
   }
 } 
 
-#resource "aws_connect_contact_flow" "wait" {
-#  instance_id  = aws_connect_instance.song.id
-#  name         = "Sample Deepgram flow"
-#  description  = "Sample Deepgram flow"
-#  type         = "CONTACT_FLOW"
-#  filename     = "sample_flow.json"
-#} 
+resource "aws_connect_lambda_function_association" "kvs_dg_trigger" {
+  depends_on = [ aws_lambda_function.kvs_dg_trigger ]
+  function_arn = aws_lambda_function.kvs_dg_trigger.arn
+  instance_id  = aws_connect_instance.song.id
+}
+
+
+resource "aws_connect_contact_flow" "wait" {
+  instance_id  = aws_connect_instance.song.id
+  name         = "Sample Deepgram flow"
+  description  = "Sample Deepgram flow"
+  type         = "CONTACT_FLOW"
+  filename     = "sample_flow.json"
+} 

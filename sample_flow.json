@@ -318,7 +318,7 @@
         },
         {
             "Parameters": {
-                "LambdaFunctionARN": "",
+                "LambdaFunctionARN": "arn:aws:lambda:ap-southeast-1:*:function:kvsDgTrigger",
                 "InvocationTimeLimitSeconds": "8",
                 "ResponseValidation": {
                     "ResponseType": "STRING_MAP"
