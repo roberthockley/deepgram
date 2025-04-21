@@ -63,5 +63,5 @@ resource "aws_ecs_service" "kvs_dg_integrator_ecs_service" {
   }
 
   # Dependency enforcement
-  depends_on = [aws_lb_listener.kvs_dg_integrator_load_balancer_listener]
+  depends_on = [aws_lb_listener.kvs_dg_integrator_listener]
 }
