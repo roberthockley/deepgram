@@ -95,7 +95,7 @@ resource "aws_connect_instance_storage_config" "kvs" {
 
   storage_config {
     kinesis_video_stream_config {
-      prefix                 = "streams-"
+      prefix                 = "streams"
       retention_period_hours = 3
 
       encryption_config {
