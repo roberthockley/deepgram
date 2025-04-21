@@ -31,7 +31,7 @@ variable "connect" {
   sensitive = false
 }
 
-variable " deepgram" {
+variable "deepgram" {
   type = object({
     deepgram_api                = string
     deepgram_api_key            = string
