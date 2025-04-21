@@ -26,7 +26,16 @@ variable "dynamo" {
 
 variable "connect" {
   type = object({
-    alias    = string
+    alias = string
+  })
+  sensitive = false
+}
+
+variable " deepgram" {
+  type = object({
+    deepgram_api                = string
+    deepgram_api_key            = string
+    kvs_dg_integrator_log_level = string
   })
   sensitive = false
 }

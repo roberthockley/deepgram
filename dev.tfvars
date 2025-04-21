@@ -21,3 +21,9 @@ dynamo = {
 connect = {
   alias = "song-connect"
 }
+
+deepgram = {
+  deepgram_api = "25b8f408-0a36-41c3-b882-d65214f3246a"
+  deepgram_api_key = "67ca1db57274e784fa1414d0edbe01de6cebfd0f"
+  kvs_dg_integrator_log_level = "Debug"
+}
