@@ -17,12 +17,13 @@ resource "aws_ecs_task_definition" "kvs_dg_integrator" {
 
   container_definitions = jsonencode([
     {
-      name      = "kvs-dg-integrator-container"
-      image     = "${var.environment.account_id}.dkr.ecr.${var.environment.region}.amazonaws.com/kvs-dg-integrator:latest"
+      name  = "kvs-dg-integrator-container"
+      image = "${var.environment.account_id}.dkr.ecr.${var.environment.region}.amazonaws.com/kvs-dg-integrator:latest"
       portMappings = [{
         containerPort = 80
         hostPort      = 80
         protocol      = "tcp"
+        appProtocol   = "http"
       }]
       environment = [
         { name = "DEEPGRAM_API", value = var.deepgram.deepgram_api },
