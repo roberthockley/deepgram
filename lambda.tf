@@ -17,8 +17,8 @@ resource "aws_lambda_function" "kvs_dg_trigger" {
     }
   }
 
-  #vpc_config {
-  #  security_group_ids = [aws_security_group.kvsDgTrigger.id]
-   # subnet_ids        = [aws_subnet.deepgram_a.id,aws_subnet.deepgram_b.id]
-  #}
+  vpc_config {
+    security_group_ids = [aws_security_group.kvsDgTrigger.id]
+    subnet_ids        = [aws_subnet.deepgram_a.id,aws_subnet.deepgram_b.id]
+  }
 }
