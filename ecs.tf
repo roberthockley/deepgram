@@ -28,19 +28,18 @@ resource "aws_ecs_task_definition" "kvs_dg_integrator" {
         protocol      = "tcp"
         appProtocol   = "http"
       }]
-      entryPoint= []
-      environmentFiles = []
-      command = []
-      environmentFiles = []
-      secrets = []
-      dnsServers = []
-      dnsSearchDomains = []
-      extraHosts = []
+      entryPoint            = []
+      environmentFiles      = []
+      command               = []
+      environmentFiles      = []
+      secrets               = []
+      dnsServers            = []
+      dnsSearchDomains      = []
+      extraHosts            = []
       dockerSecurityOptions = []
-      dockerLabels = {}
-      ulimits = []
-      secretOptions = []
-      systemControls = []
+      dockerLabels          = {}
+      ulimits               = []
+      systemControls  = []
       credentialSpecs = []
       environment = [
         { name = "DEEPGRAM_API", value = var.deepgram.deepgram_api },
@@ -55,6 +54,7 @@ resource "aws_ecs_task_definition" "kvs_dg_integrator" {
           awslogs-region        = "${var.environment.region}"
           awslogs-stream-prefix = "ecs"
         }
+        secretOptions = []
       }
     }
   ])
@@ -68,9 +68,9 @@ resource "aws_ecs_service" "kvs_dg_integrator_ecs_service" {
   launch_type     = "FARGATE"
 
   network_configuration {
-    subnets          = [aws_subnet.deepgram_a.id,aws_subnet.deepgram_b.id]
+    subnets          = [aws_subnet.deepgram_a.id, aws_subnet.deepgram_b.id]
     security_groups  = [aws_security_group.kvsDgIntegratorEcs.id]
-    assign_public_ip = true  # Change to false for private subnets with NAT
+    assign_public_ip = true # Change to false for private subnets with NAT
   }
 
   load_balancer {
